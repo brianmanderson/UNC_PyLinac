@@ -27,11 +27,12 @@ gantry_collimator_couch_angles = [
     (90, 90, 0),
     (90, 270, 0)
 ]
+bb_size_mm = 7
 mapping = {filename: angle for filename, angle in zip(sorted_files, gantry_collimator_couch_angles)}
 print('File name                                     Gantry Collimator Couch')
 for key in mapping.keys():
     print(f"{key} mapped to {mapping[key]}")
-wl = WinstonLutz(directory=path_to_files, axis_mapping=mapping, sid=1600) #,sid=1600
-wl.analyze(bb_size_mm=7, machine_scale=MachineScale.ELEKTA_IEC, low_density_bb=False)
+wl = WinstonLutz(directory=path_to_files, axis_mapping=mapping)
+wl.analyze(bb_size_mm=bb_size_mm, machine_scale=MachineScale.ELEKTA_IEC, low_density_bb=False)
 print(wl.bb_shift_instructions())
 x = 1
