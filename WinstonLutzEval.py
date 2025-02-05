@@ -1,4 +1,5 @@
-from pylinac.winston_lutz import WinstonLutz, MachineScale
+from pylinac.winston_lutz import WinstonLutz, MachineScale, Axis
+from PlotScrollNumpyArrays import plot_scroll_Image
 import os
 
 
@@ -35,4 +36,5 @@ for key in mapping.keys():
 wl = WinstonLutz(directory=path_to_files, axis_mapping=mapping)
 wl.analyze(bb_size_mm=bb_size_mm, machine_scale=MachineScale.ELEKTA_IEC, low_density_bb=False)
 print(wl.bb_shift_instructions())
+wl.plot_images()
 x = 1
