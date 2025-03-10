@@ -1,5 +1,5 @@
-from pylinac.winston_lutz import WinstonLutz, MachineScale, Axis
 from PlotScrollNumpyArrays import plot_scroll_Image
+from pylinac.winston_lutz import WinstonLutz, MachineScale, Axis
 import os
 
 
